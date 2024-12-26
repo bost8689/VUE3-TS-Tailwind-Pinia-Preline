@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- MAIN PAGE -->
+  <div class="bg-fixed" :style="['background-image: url(/' + 'fon-main.svg' + ');']">
+    <AppTop />
+
+    <!-- +Body -->
+    <div class="max-w-[calc(80rem)] mx-auto">
+
+      <AppSidebar/>      
+
+      <!-- +Body content -->
+      <div class="lg:ps-[260px] min-h-screen">
+        <div class="reltive p-2 md:p-8">
+          <!-- +content -->
+          <div id="scrollspy" class="space-y-3 md:space-y-6">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link>
+            <router-view/>
+          </div>
+          <!-- -content -->
+        </div>
+      </div>
+      <!-- -Body content -->
+
+    </div>
+    <!-- -Body -->
+    <AppBottomMobile />
+  </div>
+  <!-- +MAIN PAGE -->
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script setup lang="ts">
+import AppTop from "@/components/AppTop.vue";
+import AppBottomMobile from "@/components/AppBottomMobile.vue";
+import AppSidebar from "@/components/AppSidebar.vue";
+</script>
+<style scoped lang="scss"></style>
