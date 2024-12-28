@@ -13,8 +13,7 @@
         <div class="reltive p-2 md:p-8">
           <!-- +content -->
           <div id="scrollspy" class="space-y-3 md:space-y-6">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
+            <router-link to="/">Домашняя</router-link>            
             <router-view/>
           </div>
           <!-- -content -->
